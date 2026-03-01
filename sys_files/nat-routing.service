@@ -1,0 +1,11 @@
+[Unit]
+Description=Persistent NAT routing for AP
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/setup_nat.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
