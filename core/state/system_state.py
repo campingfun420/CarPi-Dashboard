@@ -1,22 +1,5 @@
-from dataclasses import dataclass, field
-from typing import Dict, List, Optional
-
-@dataclass(frozen=True)
-class GearState:
-    gear: str = "PARK"
-
-@dataclass(frozen=True)
-class LayoutProfile:
-    orientation: str
-    row_order: List[str]
-
-@dataclass(frozen=True)
-class LayoutState:
-    active_orientation: str
-    profiles: Dict[str, LayoutProfile]
-    move_mode_row: Optional[str] = None
-
-@dataclass(frozen=True)
 class SystemState:
-    gear: GearState
-    layout: LayoutState
+    def __init__(self):
+        self.gear_state = 'PARK'
+        self.layout_state = {}
+        # add more state fields as needed
